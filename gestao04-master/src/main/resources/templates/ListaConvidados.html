@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="LayoutPadrao"
->
-	<section layout:fragment="conteudo">
-		<div class="container mt-2">
-			<div class="card">
-				<div class="card-header">
-					<h2 class="text-center card-title">Lista de convidados</h2>
-				</div>
-				<div class="card-body">
-					<form method="POST" style="margin: 20px 0" th:object="${convidado}" th:action="@{/convidados}">
-						<div class="form-group">
-							<input type="hidden" th:field="*{id}"/>
-							<label for="nome">Nome:</label>
-							<input type="text" id="nome" class="form-control"	placeholder="Nome" th:field="*{nome}"/>
-							<label for="acompanhantes">Acompanhantes:</label>
-							<input type="text" id="acompanhantes" class="form-control" placeholder="Acompanhantes" th:field="*{qtde}"/>
-							</div>
-							<button type="submit" class="btn btn-primary">Adicionar</button>
-					</form>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Nome</th>
-								<th>Acompanhantes</th>
-								<th colspan="2">Acoes</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="c : ${convidados}" >
-								<td th:text="${c.nome}">João</td>
-								<td th:text="${c.qtde}">3</td>
-								<td><a class="btn btn-secondary glyphicon glyphicon-pencil" th:href="@{/convidados/alterar/} + ${c.id}">Alterar</a></td>
-								<td><a class="btn btn-outline-secondary glyphicon glyphicon-pencil" th:href="@{/convidados/excluir/} + ${c.id}">Excluir</a></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</section>
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="LayoutPadrao"
+      >
+    <section layout:fragment="conteudo">
+        <div class="container mt-2">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center card-title">Lista de convidados</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" style="margin: 20px 0" th:object="${convidado}" th:action="@{/convidados}">
+                        <div class="form-group">
+                            <input type="hidden" th:field="*{id}"/>
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" id="nome" class="form-control"	placeholder="Nome" th:field="*{nome}"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="acompanhantes">Acompanhantes:</label>
+                                <input type="text" id="acompanhantes" class="form-control" placeholder="Acompanhantes" th:field="*{qtde}"/>
+                            </div>
+                            <select class="form-control" id="festa" th:field="*{festa}">
+                                <option th:each="f : ${festas}" th:value="${f.id}" th:text="${f.nome}">
+                                </option>
+                            </select>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </form>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Acompanhantes</th>
+                                <th>Festa</th>
+                                <th colspan="2">Acoes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="c : ${convidados}" >
+                                <td th:text="${c.nome}">João</td>
+                                <td th:text="${c.qtde}">3</td>
+                                <td th:text="${c.festa.nome}"></td>
+                                <td><a class="btn btn-secondary glyphicon glyphicon-pencil" th:href="@{/convidados/alterar/} + ${c.id}">Alterar</a></td>
+                                <td><a class="btn btn-outline-secondary glyphicon glyphicon-pencil" th:href="@{/convidados/excluir/} + ${c.id}">Excluir</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 </html>

@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.algaworks.models.Convidado;
 import com.algaworks.repository.Convidados;
+import com.algaworks.repository.Festas;
 
 @Controller
 @RequestMapping("/convidados")
@@ -17,12 +18,16 @@ public class ConvidadosController {
 	
 	@Autowired
 	Convidados convidadosTable;
+        
+        @Autowired
+        Festas festasTable;
 	
 	@GetMapping
 	public ModelAndView listar() {
 		ModelAndView mv = new ModelAndView("ListaConvidados.html");
 		mv.addObject("convidados",convidadosTable.findAll());
 		mv.addObject(new Convidado());
+                mv.addObject("festas",festasTable.findAll());
 		return mv;		
 	}
 	
@@ -46,6 +51,7 @@ public class ConvidadosController {
 		ModelAndView mv = new ModelAndView("ListaConvidados");
 		mv.addObject("convidados", convidadosTable.findAll());
 		mv.addObject("convidado", convidadosTable.findById(id));
+                mv.addObject("festas",festasTable.findAll());
 		return mv;
 	}
 	
