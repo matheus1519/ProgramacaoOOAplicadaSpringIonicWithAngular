@@ -1,0 +1,1 @@
+insert into produto(nome,preco,desconto) values ('Arroz', 10.8,2.3);
