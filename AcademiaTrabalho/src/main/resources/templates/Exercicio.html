@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="LayoutPadrao"
+      >
+    <section layout:fragment="conteudo">
+        <div class="container mt-2">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center card-title">Exercicios</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" style="margin: 20px 0" th:object="${exercicio}" th:action="@{/exercicios}">
+                        <div class="form-group">
+                            <input type="hidden" th:field="*{id}"/>
+                            <div class="form-group">
+                                <label for="nome">Nome:</label>
+                                <input type="text" id="nome" class="form-control" placeholder="Nome" th:field="*{nome}"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="serie">Serie:</label>
+                                <input type="number" id="serie" class="form-control" placeholder="Serie" th:field="*{serie}"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="serie">Repetição</label>
+                                <input type="number" id="repeticao" class="form-control" placeholder="Repetição" th:field="*{repeticao}"/>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </form>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Série</th>
+                                <th>Repetição</th>
+                                <th colspan="2">Acoes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="e : ${exercicios}" >
+                                <td th:text="${e.nome}"></td>
+                                <td th:text="${e.serie}"></td>
+                                <td th:text="${e.repeticao}"></td>
+                                <td><a class="btn btn-secondary glyphicon glyphicon-pencil" th:href="@{/exercicios/alterar/} + ${e.id}">Alterar</a></td>
+                                <td><a class="btn btn-outline-secondary glyphicon glyphicon-pencil" th:href="@{/exercicios/excluir/} + ${e.id}">Excluir</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</html>
