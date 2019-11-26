@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-label>Aluno</ion-label>
+    <ion-input type="text" [(ngModel)]="nome"></ion-input>
+    <ion-label>Nota</ion-label>
+    <ion-input type="number" [(ngModel)]="nota"></ion-input>
+    <ion-button (click) = "save()">Adicionar</ion-button>
+    <ion-item-sliding *ngFor="let l of alunos; let i = index" >
+        <ion-item>{{l.nome}} | Nota: {{l.nota}}</ion-item>
+        <ion-item-options side="end">
+        <ion-button class="btn-excluir" color="danger" (click)="remove(i)">
+        <ion-icon name="trash"></ion-icon>
+        Excluir
+        </ion-button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+
+</ion-content>
