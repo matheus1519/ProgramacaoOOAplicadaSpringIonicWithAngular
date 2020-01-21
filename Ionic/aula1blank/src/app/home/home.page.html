@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Página Inicial
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Base:</ion-label>
+      <ion-input type="text"[(ngModel)]="base"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Altura:</ion-label>
+        <ion-input type="text"[(ngModel)]="altura"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-button (click)="mostraAlerta()">Fazer Alguma Coisa</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
