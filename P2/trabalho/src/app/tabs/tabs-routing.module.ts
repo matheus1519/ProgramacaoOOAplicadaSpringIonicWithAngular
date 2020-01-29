@@ -10,20 +10,20 @@ const routes: Routes = [
       {
         path: 'tab1',
         children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
-          }
+        {
+        path: '',
+        loadChildren: () =>
+        import('../pages/carros/carros.module').then(m => m.CarrosPageModule)
+        }
         ]
-      },
+       },
       {
-        path: 'tab2',
+        path: 'form-carros',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../pages/form-carros/form-carros.module').then(m => m.FormCarrosPageModule)
           }
         ]
       },
