@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-tabs',
@@ -9,10 +7,6 @@ import { Router } from '@angular/router';
 })
 export class TabsPage {
 
-  constructor(private router: Router) {}
-
-  addCarro(){
-    this.router.navigate(['form-carros', 0]);
-  }
+  constructor() {}
 
 }
