@@ -7,19 +7,22 @@
 <ion-content>
   <ion-list>
     <ion-item-sliding *ngFor="let c of carros | async">
-    <!-- Link para edição-->
-    <ion-item (click)="editCarro(c.id)">
-    <h2>{{c.marca}}</h2>
-    </ion-item>
-    <!-- Botao para apagar-->
-    <ion-item-options side="end">
-    <ion-button color="danger" (click)="removeCarro(c.id)">
-    <ion-icon name="trash"></ion-icon>
-    Excluir
-    </ion-button>
-    </ion-item-options>
+      <!-- Link para edição-->
+      <ion-item (click)="editCarro(c.id)">
+        <h2>{{c.marca}}</h2>
+      </ion-item>
+      <!-- Botao para apagar-->
+      <ion-item-options side="end">
+        <ion-button color="danger" (click)="removeCarro(c.id)">
+          <ion-icon name="trash"></ion-icon>
+          Excluir
+        </ion-button>
+      </ion-item-options>
     </ion-item-sliding>
-    </ion-list>
-   
-
+  </ion-list>
+  <ion-fab>
+    <ion-fab-button color="light" (click)="addCarro()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -1,5 +1,51 @@
 {
-  "carros": [],
+  "carros": [
+    {
+      "id": 1,
+      "placa": "RTX",
+      "ano": 2019,
+      "marca": "sedan",
+      "modelo_id": 1
+    },
+    {
+      "id": 2,
+      "placa": "RTX",
+      "ano": "2015",
+      "marca": "stw",
+      "modelo_id": "2"
+    },
+    {
+      "id": 3,
+      "placa": "2",
+      "ano": "2",
+      "marca": "Awax",
+      "modelo_id": "2"
+    },
+    {
+      "id": 4,
+      "placa": "we",
+      "ano": "2002",
+      "marca": "w",
+      "modelo_id": "e"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": "8",
+      "placa": "dfsdsdfsd",
+      "ano": "2019",
+      "marca": "hghgjg",
+      "modelo_id": "1"
+    },
+    {
+      "id": "11",
+      "placa": "dfsd",
+      "ano": "2019",
+      "marca": "hghgjg",
+      "modelo_id": "1"
+    }
+  ],
   "modelos": [
     {
       "id": 1,
