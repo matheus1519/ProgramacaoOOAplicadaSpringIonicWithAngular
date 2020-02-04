@@ -25,25 +25,50 @@
       "id": 4,
       "placa": "we",
       "ano": "2002",
-      "marca": "w",
+      "marca": "wee",
       "modelo_id": "e"
     },
     {
+      "placa": "MAT",
+      "ano": "2012",
+      "marca": "MAT",
+      "modelo_id": "2",
       "id": 5
     },
     {
-      "id": "8",
-      "placa": "dfsdsdfsd",
-      "ano": "2019",
-      "marca": "hghgjg",
-      "modelo_id": "1"
+      "placa": "MAMA",
+      "ano": "2012",
+      "marca": "MAMA",
+      "modelo_id": "2",
+      "id": 6
     },
     {
-      "id": "11",
-      "placa": "dfsd",
-      "ano": "2019",
-      "marca": "hghgjg",
-      "modelo_id": "1"
+      "placa": "MAM",
+      "ano": "2012",
+      "marca": "MA",
+      "modelo_id": "2",
+      "id": 7
+    },
+    {
+      "placa": "MAMA",
+      "ano": "2012",
+      "marca": "MAMA",
+      "modelo_id": "2",
+      "id": 8
+    },
+    {
+      "placa": "MAMA",
+      "ano": "2012",
+      "marca": "MAMA",
+      "modelo_id": "2",
+      "id": 9
+    },
+    {
+      "placa": "MAMA",
+      "ano": "2012",
+      "marca": "MAMA",
+      "modelo_id": "2",
+      "id": 10
     }
   ],
   "modelos": [
